@@ -23,7 +23,7 @@ def task(conn):
 def run():
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.bind(('127.0.0.1',8081))
-    sock.listen(5)
+    sock.listen(5)  #最多支持5人排队
     while True:  #子线程执行后（不需要等待处理完成），会继续返回主线程再次等待
         # 主线程等待客户端连接
         conn,addr = sock.accept()
